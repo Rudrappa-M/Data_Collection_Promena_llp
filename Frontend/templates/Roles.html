@@ -1,0 +1,636 @@
+﻿<!DOCTYPE html>
+{% load static %}
+<html dir="ltr" lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+          content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 4 admin, bootstrap 4, css3 dashboard, bootstrap 4 dashboard, Ample lite admin bootstrap 4 dashboard, frontend, responsive bootstrap 4 admin template, Ample admin lite dashboard bootstrap 4 dashboard template">
+    <meta name="description"
+          content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Roles</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="static/plugins/images/favicon.png">
+    <!-- Custom CSS -->
+    <link href="static/css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+            .switch input {
+                opacity: 0;
+                width: 0;
+                height: 0;
+            }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+            .slider:before {
+                position: absolute;
+                content: "";
+                height: 26px;
+                width: 26px;
+                left: 4px;
+                bottom: 4px;
+                background-color: white;
+                -webkit-transition: .4s;
+                transition: .4s;
+            }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #2196F3;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 3px;
+        }
+
+            .slider.round:before {
+                border-radius: 50%;
+            }
+
+        .active {
+            color: black !important;
+            font-weight: 700 !important;
+        }
+
+        .Navbar-ul {
+            float: right !important;
+        }
+        .logo-text {
+            color: #23527c !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin6">
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" href="all_user.html">
+                        <!-- Logo icon -->
+                        <b class="logo-icon">
+                            <!-- Dark Logo icon -->
+                            <img src="static/plugins/images/logo-icon.png" alt="homepage" />
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span class="logo-text">
+                            <!-- dark Logo text -->
+                            <!--<img src="static/plugins/images/oie_IFCw4UZKKghZ.png" alt="homepage" />-->
+                            Data Collection
+                        </span>
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
+                       href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                    <ul class="navbar-nav d-none d-md-block d-lg-none">
+                        <li class="nav-item">
+                            <a class="nav-toggler nav-link waves-effect waves-light text-white"
+                               href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav ml-auto d-flex align-items-center Navbar-ul">
+
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <!--<li class=" in">
+                            <a class="profile-pic" href="#">
+                                <img src="static/plugins/images/users/varun.jpg" alt="user-img" width="36"
+                                     class="img-circle"><span class="text-white font-medium">Admin</span>
+                            </a>
+                        </li>-->
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        <li class="text-center p-20 upgrade-btn">
+                            <button onclick="Logout()" class="btn btn-block btn-danger text-white">Logout</button>
+                            <!--<a href="login.html"
+                            class="btn btn-block btn-danger text-white" target="_parent">Logout</a>-->
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <!-- User Profile-->
+                        <!--<li class="sidebar-item">
+                            <script type="text/javascript">
+                                document.write('<a class="sidebar-link waves-effect waves-dark sidebar-link" href="all_user.html"><i class="fa fa-user" aria - hidden="true" ></i > <span class="hide-menu">All User</span></a>');
+                            </script>
+
+                        </li>-->
+                        <!--<li class="sidebar-item">
+
+                            <script type="text/javascript">
+                                document.write('<a class="sidebar-link waves-effect waves-dark sidebar-link" href="request.html"><i class="fa fa-table" aria - hidden="true" ></i > <span class="hide-menu">Aproved</span></a>');
+                            </script>
+                        </li>-->
+                        <!--<li class="sidebar-item">
+
+                            <script type="text/javascript">
+                                document.write('<a class="sidebar-link waves-effect waves-dark sidebar-link" href="Roles.html"><i class="fa fa-table" aria - hidden="true" ></i > <span class="hide-menu">Roles</span></a>');
+                            </script>
+                        </li>
+                        <li class="sidebar-item">
+                            <script type="text/javascript">
+                                document.write('<a class="sidebar-link waves-effect waves-dark sidebar-link" href="UserForms.html"><i class="fa fa-table" aria - hidden="true" ></i > <span class="hide-menu">Form</span></a>');
+                            </script>
+                        </li>
+                        <li class="sidebar-item">
+                            <script type="text/javascript">
+                                document.write('<a class="sidebar-link waves-effect waves-dark sidebar-link" href="payment.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Payment</span></a>');
+                            </script>
+
+                        </li>
+                        <li class="sidebar-item">
+                            <script type="text/javascript">
+                                document.write('<a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Profile</span></a>');
+                            </script>
+
+                        </li>
+                        <li class="sidebar-item">
+
+                            <script type="text/javascript">
+                                document.write('<a class="sidebar-link waves-effect waves-dark sidebar-link" href="change_pasword.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">Change Password</span></a>');
+                            </script>
+                        </li>-->
+
+
+
+                    </ul>
+
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper" style="min-height: 250px;">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb bg-white">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title text-uppercase font-medium font-14">Roles</h4>
+                    </div>
+                    <!--<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                        <div class="d-md-flex">
+                            <ol class="breadcrumb ml-auto">
+                                <li><a href="#">Admin/Roles</a>
+                            </ol>
+
+                        </div>
+                    </div>-->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="white-box">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h4><span style="color:red" id="lblErrorMsg"></span></h4>
+                                    <button type="button" class="btn btn-primary pull-right" id="BtnCreateRole" onclick="CreateRole()" style="margin-bottom:20px">Create Role</button>
+                                </div>
+                            </div>
+                            <table class="table table-striped" id="sortable-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">No</th>
+                                        <th scope="col">rolename</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+        <!-- The Modal -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Delete Role</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <input type="hidden" id="HdnRoleId" />
+                        Are You sure you want to delete? - <span id="RoleName"></span>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="BtnYes" onclick="DeleteRoleConfirm()">Yes</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="modal" id="ModalRole">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Create Role</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4><span style="color:red" id="lblRoleErrorMsg"></span></h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <h6 class="mb-0">Role Name</h6>
+                            </div>
+                            <div class="col-sm-9 text-secondary">
+                                <input id="RoleNameCreate" type="text" class="form-control" value="" placeholder="Role Name" name="RoleNameCreate" tabindex="1" required autofocus>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="BtnYes" onclick="CreateNewRole()">Submit</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="static/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="static/plugins/bower_components/popper.js/dist/umd/popper.min.js"></script>
+    <!--<script src="bootstrap/dist/js/bootstrap.min.js"></script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="static/js/app-style-switcher.js"></script>
+    <!--Wave Effects -->
+    <script src="static/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="static/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="static/js/custom.js"></script>
+    <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>-->
+    <script src="static/js/jquery.cookie.min.js"></script>
+    <script type="text/javascript">
+
+        checkAuthenticated();
+        function checkAuthenticated() {
+            if ($.cookie("cookie_name") == undefined) {
+                window.location.href = "login.html";
+            } else {
+                CheckPermission();
+                GetAllUsers();
+            }
+        }
+
+        var table = $('#sortable-table').DataTable();
+        function GetAllUsers() {
+            //var myParam = location.search.split('token=')[1];
+            var myParam = $.cookie("cookie_name");
+            $.ajax({
+                url: "http://dfo.hktech.in/Admin/GetRoles/",
+                type: "GET",
+                headers: { Authorization: $`Bearer ${myParam}` },
+                error: function (err) {
+                    $(".preloader").hide();
+                    switch (err.status) {
+                        case 400:
+                            // bad request
+                            break;
+                        case 401:
+                            window.location.href = "login.html";
+                            break;
+                        case 403:
+                            // forbidden
+                            break;
+                        default:
+                            //Something bad happened
+                            break;
+                    }
+                },
+                beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + myParam) },
+                success: function (response) {
+                    for (i = 0; i < response.data.length; i++) {
+                        var string = "<tr><th scope = 'row'>" + i + 1 + "</th>";
+                        var Status = '<label onclick="DeleteRole(' + response.data[i].id + ',\'' + response.data[i].rolename + '\')"><span class="glyphicon glyphicon-trash"></span></label>';
+
+                        table.row.add([
+                            i + 1,
+                            response.data[i].rolename,
+                            Status
+                        ]).draw(false);
+                    }
+                    $(".preloader").hide();
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            //$('input[type="checkbox"]').each(function () {
+            //    //$("#chk").click(function () {
+            //    alert("Id: " + $(this).attr("id") + " Value: " + $(this).val());
+            //    if (this.checked) {
+            //        var returnVal = confirm("Are you sure?");
+            //        $(this).attr("checked", returnVal);
+            //    }
+            //});
+        });
+
+        function Logout() {
+            $.removeCookie('cookie_name', { path: '/' });
+            window.location.href = "login.html";
+        }
+
+        $('#myModal').modal({
+            show: false
+        });
+
+        $('#ModalRole').modal({
+            show: false
+        });
+
+        function DeleteRole(id, RoleName) {
+            //HdnRoleId  RoleName BtnYes
+            $("#HdnRoleId").val(id);
+            $("#RoleName").html(RoleName);
+            $('#myModal').modal('show', true);
+        }
+
+        function DeleteRoleConfirm() {
+            var RoleId = $("#HdnRoleId").val();
+            var myParam = $.cookie("cookie_name");
+            $.ajax({
+                url: "http://dfo.hktech.in/Admin/DeleteRoles/?id=" + RoleId,
+                type: "DELETE",
+                headers: { Authorization: $`Bearer ${myParam}` },
+                //data: '{ "id" : "' + RoleId + '"}',
+                dataType: 'json',
+                contentType: 'application/json',
+                error: function (err) {
+                    $('#myModal').modal('hide');
+                    $(".preloader").hide();
+                    switch (err.status) {
+                        case 400:
+                            $("#lblErrorMsg").html('Failed To Delete Role');
+                            break;
+                        case 401:
+                            window.location.href = "login.html";
+                            break;
+                        case 403:
+                            // forbidden
+                            break;
+                        default:
+                            $("#lblErrorMsg").html('Failed To Delete Role');
+                            break;
+                    }
+                },
+                beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + myParam); $(".preloader").show(); },
+                success: function (response) {
+                    $('#myModal').modal('hide');
+                    table.clear().draw();
+                    GetAllUsers();
+                }
+            });
+        }
+
+        function CreateRole() {
+            $('#ModalRole').modal('show', true);
+        }
+
+        function CreateNewRole() {
+            $("#lblRoleErrorMsg").html('');
+            var RoleName = $("#RoleNameCreate").val();
+            var myParam = $.cookie("cookie_name");
+            if (RoleName == "") {
+                $("#lblRoleErrorMsg").html('Enter Role Name');
+                return;
+            }
+            $.ajax({
+                url: "http://dfo.hktech.in/Admin/CreateRole/",
+                type: "POST",
+                headers: { Authorization: $`Bearer ${myParam}` },
+                data: '{ "rolename" : "' + RoleName + '"}',
+                dataType: 'json',
+                contentType: 'application/json',
+                error: function (err) {
+                    $('#ModalRole').modal('hide');
+                    $("#lblRoleErrorMsg").html('');
+                    $(".preloader").hide();
+                    switch (err.status) {
+                        case 400:
+                            $("#lblErrorMsg").html('Failed To Create Role');
+                            break;
+                        case 401:
+                            window.location.href = "login.html";
+                            break;
+                        case 403:
+                            // forbidden
+                            break;
+                        default:
+                            $("#lblErrorMsg").html('Failed To Create Role');
+                            break;
+                    }
+                },
+                beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + myParam); $(".preloader").show(); },
+                success: function (response) {
+                    $('#ModalRole').modal('hide');
+                    $("#lblRoleErrorMsg").html('');
+                    $("#RoleNameCreate").val('');
+                    table.clear().draw();
+                    GetAllUsers();
+                }
+            });
+        }
+
+        function CheckPermission() {
+            if ($.cookie("RoleId") == "Super admin") {
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="all_user.html"><i class="fa fa-user" aria - hidden="true"></i> <span class="hide-menu">All User</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="Roles.html"><i class="fa fa-table" aria - hidden="true" ></i > <span class="hide-menu">Roles</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="states.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">States</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="Districts.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">Districts</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="SubDistricts.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">SubDistricts</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="UserForms.html"><i class="fa fa-table" aria - hidden="true" ></i > <span class="hide-menu">Form</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="payment.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Payment</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="StateHead.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">StateHeads</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="DistrictHead.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">DistrictHeads</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="SubDistrictHead.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">SubDistrictHeads</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="Attendance.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">Attendance</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Profile</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="change_pasword.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">Change Password</span></a></li>');
+            }
+            else if ($.cookie("RoleId") == "District head") {
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="all_user.html"><i class="fa fa-user" aria - hidden="true"></i> <span class="hide-menu">All User</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="UserForms.html"><i class="fa fa-table" aria - hidden="true" ></i > <span class="hide-menu">Form</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="payment.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Payment</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Profile</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="change_pasword.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">Change Password</span></a></li>');
+            }
+            else if ($.cookie("RoleId") == "State head") {
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="all_user.html"><i class="fa fa-user" aria - hidden="true"></i> <span class="hide-menu">All User</span></a></li>');               
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="UserForms.html"><i class="fa fa-table" aria - hidden="true" ></i > <span class="hide-menu">Form</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="payment.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Payment</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Profile</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="change_pasword.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">Change Password</span></a></li>');
+            } else if ($.cookie("RoleId") == "Taluk head") {
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="all_user.html"><i class="fa fa-user" aria - hidden="true"></i> <span class="hide-menu">All User</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="UserForms.html"><i class="fa fa-table" aria - hidden="true" ></i > <span class="hide-menu">Form</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="payment.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Payment</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Profile</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="change_pasword.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">Change Password</span></a></li>');
+            } else {
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="payment.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Payment</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Profile</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="change_pasword.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">Change Password</span></a></li>');
+            }
+        }
+    </script>
+</body>
+
+</html>

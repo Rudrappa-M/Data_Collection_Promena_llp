@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+  <title>Components &rsaquo; Table &mdash; Stisla</title>
+
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+  <!-- CSS Libraries -->
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+
+
+  <style>
+    .field-icon {
+      float: right;
+      margin-left: -25px;
+      margin-top: -25px;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .container{
+      padding-top:50px;
+      margin: auto;
+    }
+       input[type=checkbox]:not(old){
+      display: inline;
+}
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <section class="section">
+      <div class="d-flex flex-wrap align-items-stretch">
+        <div class="col-lg-4 col-md-6 col-12 order-lg-1 min-vh-100 order-2 bg-white">
+          <div class="p-4 m-3">
+            <div class="text-center">
+              <img src="assets/img/stisla.jpg" alt="logo" width="100px" style="margin-bottom: 5%">
+            </div>
+            
+            
+             <form>
+                    
+                 
+                  <div class="row">
+                   
+                    <div class="col-sm-12 text-secondary">
+                     <input id="name" type="text" class="form-control" value="" placeholder="Name" name="name" tabindex="1" required autofocus>
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    
+                    <div class="col-sm-12 text-secondary">
+                     <input id="name" type="date" class="form-control input--style-1 js-datepicker form-control" value="" placeholder="DOB" name="dob" tabindex="1" required autofocus>
+                    
+                    </div>
+                  </div>
+                  <hr>
+                  
+                  <div class="row">
+                    
+                    <div class="col-sm-12 text-secondary">
+                      <input id="email" type="email" class="form-control" value="" placeholder="Email Id" name="email" tabindex="1" required autofocus>
+                      
+                    </div>
+                  </div>
+                  
+                  <hr>
+                  <div class="row">
+                    
+                    <div class="col-sm-12 text-secondary">
+                      <input id="addhar" type="number" class="form-control" value="" placeholder="Addhar No." name="addhar" tabindex="1" required autofocus>
+                      
+                    </div>
+                  </div>
+                  
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">CSC No.</h6>
+                    </div>
+                    <div class="col-sm-7 text-secondary" style="display: inline-flex;">
+                     
+                      <input type="checkbox" id="yes" name="yes" value="yes" >
+                        <h6 class="mb-0"> Yes</h6>
+                        <input type="checkbox" id="yes" name="no" value="no" >
+                        <h6 class="mb-0"> No</h6>
+                        
+                      
+                    </div>
+                    <div class="col-sm-12 text-secondary">
+                      <input id="csc_no" type="number" class="form-control" style="margin-left: 28%;width: 71%;" value="" placeholder="CSC No." name="csc_no" tabindex="1" required autofocus>
+                      
+                    </div>
+                  </div>
+                  
+                  <hr>
+                  <div class="row">
+                    
+                    <div class="col-sm-12 text-secondary">
+                      
+                      <textarea id="mobile" class="form-control" placeholder="Address" name="mobile" tabindex="1" required autofocus>
+                        
+                      </textarea>
+                    </div>
+                  </div>
+                  <hr>
+                   <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">BC ID.</h6>
+                    </div>
+                    <div class="col-sm-7 text-secondary" style="display: inline-flex;">
+                     
+                      <input type="checkbox" id="yes" name="yes" value="yes" >
+                        <h6 class="mb-0"> Yes</h6>
+                        <input type="checkbox" id="yes" name="no" value="no" >
+                        <h6 class="mb-0"> No</h6>
+                        
+                      
+                    </div>
+                  
+                  </div>
+                  
+                  <hr>
+                   <div class="row">
+                    <div class="col-sm-5">
+                      <h6 class="mb-0">CSPC ID.</h6>
+                    </div>
+                    <div class="col-sm-7 text-secondary" style="display: inline-flex;">
+                     
+                      <input type="checkbox" id="yes" name="yes" value="yes" >
+                        <h6 class="mb-0"> Yes</h6>
+                        <input type="checkbox" id="yes" name="no" value="no" >
+                        <h6 class="mb-0"> No</h6>
+                        
+                      
+                    </div>
+                    
+                  </div>
+                  
+                  <hr>
+                   <div class="row">
+                    
+                    <div class="col-sm-12 text-secondary">
+                      <input id="pin_no" type="number" class="form-control" value="" placeholder="Pin No." name="pin_no" tabindex="1" required autofocus>
+                      
+                    </div>
+                  </div>
+                  
+                  <hr>
+                   <div class="row">
+                   
+                    <div class="col-sm-12 text-secondary">
+                      <input id="upid" type="email" class="form-control" value="" placeholder="UPI ID." name="upi_id" tabindex="1" required autofocus>
+                      
+                    </div>
+                  </div>
+                  
+                  <hr>
+                   <div class="row">
+                    <div class="col-sm-3">
+                       <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      <label for="agree-term" class="label-agree-term"><span><span></span></span><a href="#" class="term-service">Terms & Condition</a></label>
+                      
+                    </div>
+                  </div>
+                  
+                  <hr>
+                   <div class="row">
+                    
+                    <div class="col-sm-9 text-secondary">
+                      
+                      <button class="text-center btn btn-primary"> Submit</button>
+                    </div>
+                    <div class="col-sm-3 text-secondary">
+                      
+                      <a href="login.html" class="text-center btn btn-warning"> Login</a>
+                    </div>
+                  </div>
+                  <hr>
+                  </form>
+
+          
+          </div>
+        </div>
+        <div class="col-lg-8 col-12 order-lg-2 order-1 min-vh-100 background-walk-y position-relative overlay-gradient-bottom" data-background="assets/img/Data-collection-scaled2.jpg">
+          
+          <div class="absolute-bottom-left index-2">
+            <div class="text-light p-5 pb-2">
+              <div class="mb-5 pb-3">
+                <h1 class="mb-2 display-4 font-weight-bold"> <script type="text/javascript">
+                  document.write("<center><font size=+3 style='color: white;'>");
+                  var day = new Date();
+                  var hr = day.getHours();
+                  if (hr >= 0 && hr < 12) {
+                      document.write("Good Morning!");
+                  } else if (hr == 12) {
+                      document.write("Good Noon!");
+                  } else if (hr >= 12 && hr <= 17) {
+                      document.write("Good Afternoon!");
+                  } else {
+                      document.write("Good Evening!");
+                  }
+                  document.write("</font></center>");
+              </script></h1>
+              
+              </div>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- General JS Scripts -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="../assets/js/stisla.js"></script>
+
+  <!-- JS Libraies -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="hhttps://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+
+  <!-- Template JS File -->
+  <script src="assets/js/scripts.js"></script>
+  <script src="assets/js/custom.js"></script>
+
+  <!-- Page Specific JS File -->
+  <script src="assets/js/page/components-table.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+    $('#sortable-table').DataTable();
+} );
+  </script>
+
+ <script>
+  $(".toggle-password").click(function() {
+
+    $(this).toggleClass("fa-eye fa-eye-slash");
+    var input = $($(this).attr("toggle"));
+    if (input.attr("type") == "password") {
+      input.attr("type", "text");
+    } else {
+      input.attr("type", "password");
+    }
+  });
+
+
+     $("#submit").click(function () {
+
+         var email = $('input[name=mobile]').val();
+         var password = $('input[name=password]').val();
+        
+         $.ajax({
+             type: "POST",
+             datatype: "json",
+             url: "http://dfo.hktech.in/Admin/login",
+             data: ({
+                 email: email,
+                 password: password
+             }),
+             success: function (result) {
+                 if (result && result.auth_token.length > 1) // you should do your checking here
+                 {
+                     alert(result);
+                     window.location = 'http://www.google.com/'; //just to show that it went through
+                 }
+                 else {
+                     $('#result').empty().addClass('error')
+                         .append('Something is wrong.');
+                 }
+             }
+         });
+         return false;
+     });
+ </script>
+</body>
+</html>

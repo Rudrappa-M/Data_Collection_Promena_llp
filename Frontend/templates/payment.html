@@ -1,0 +1,861 @@
+﻿<!DOCTYPE html>
+{% load static %}
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+          content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 4 admin, bootstrap 4, css3 dashboard, bootstrap 4 dashboard, Ample lite admin bootstrap 4 dashboard, frontend, responsive bootstrap 4 admin template, Ample admin lite dashboard bootstrap 4 dashboard template">
+    <meta name="description"
+          content="Ample Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>payment</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/ample-admin-lite/" />
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="static/plugins/images/favicon.png">
+    <!-- Custom CSS -->
+    <link href="static/css/style.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style>
+        .active {
+            color: black !important;
+            font-weight: 700 !important;
+        }
+
+        .Navbar-ul {
+            float: right !important;
+        }
+
+        .logo-text {
+            color: #23527c !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+         data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin6">
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" href="all_user.html">
+                        <!-- Logo icon -->
+                        <b class="logo-icon">
+                            <!-- Dark Logo icon -->
+                            <img src="static/plugins/images/logo-icon.png" alt="homepage" />
+                        </b>
+                        <!--End Logo icon -->
+                        <!-- Logo text -->
+                        <span class="logo-text">
+                            <!-- dark Logo text -->
+                            <!--<img src="static/plugins/images/oie_IFCw4UZKKghZ.png" alt="homepage" />-->
+                            Data Collection
+                        </span>
+                    </a>
+                    <!-- ============================================================== -->
+                    <!-- End Logo -->
+                    <!-- ============================================================== -->
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
+                       href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                    <ul class="navbar-nav d-none d-md-block d-lg-none">
+                        <li class="nav-item">
+                            <a class="nav-toggler nav-link waves-effect waves-light text-white"
+                               href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                        </li>
+                    </ul>
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav ml-auto d-flex align-items-center Navbar-ul">
+
+                        <!-- ============================================================== -->
+                        <!-- Search -->
+                        <!-- ============================================================== -->
+                        <!--<li class=" in">
+                            <a class="profile-pic" href="#">
+                                <img src="static/plugins/images/users/varun.jpg" alt="user-img" width="36"
+                                     class="img-circle"><span class="text-white font-medium">Admin</span>
+                            </a>
+                        </li>-->
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                        <li class="text-center p-20 upgrade-btn">
+                            <button onclick="Logout()" class="btn btn-block btn-danger text-white">Logout</button>
+                        </li>
+                        <!-- ============================================================== -->
+                        <!-- User profile and search -->
+                        <!-- ============================================================== -->
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <!-- User Profile-->
+                        <!--<li class="sidebar-item">
+                            <script type="text/javascript">
+                                document.write('<a class="sidebar-link waves-effect waves-dark sidebar-link" href="all_user.html"><i class="fa fa-user" aria - hidden="true" ></i > <span class="hide-menu">All User</span></a>');
+                            </script>
+
+                        </li>-->
+                        <!--<li class="sidebar-item">
+
+                            <script type="text/javascript">
+                                document.write('<a class="sidebar-link waves-effect waves-dark sidebar-link" href="request.html"><i class="fa fa-table" aria - hidden="true" ></i > <span class="hide-menu">Aproved</span></a>');
+                            </script>
+                        </li>-->
+                        <!--<li class="sidebar-item">
+
+                            <script type="text/javascript">
+                                document.write('<a class="sidebar-link waves-effect waves-dark sidebar-link" href="Roles.html"><i class="fa fa-table" aria - hidden="true" ></i > <span class="hide-menu">Roles</span></a>');
+                            </script>
+                        </li>
+                        <li class="sidebar-item">
+                            <script type="text/javascript">
+                                document.write('<a class="sidebar-link waves-effect waves-dark sidebar-link" href="UserForms.html"><i class="fa fa-table" aria - hidden="true" ></i > <span class="hide-menu">Form</span></a>');
+                            </script>
+                        </li>
+                        <li class="sidebar-item">
+                            <script type="text/javascript">
+                                document.write('<a class="sidebar-link waves-effect waves-dark sidebar-link" href="payment.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Payment</span></a>');
+                            </script>
+
+                        </li>
+                        <li class="sidebar-item">
+                            <script type="text/javascript">
+                                document.write('<a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Profile</span></a>');
+                            </script>
+
+                        </li>
+                        <li class="sidebar-item">
+
+                            <script type="text/javascript">
+                                document.write('<a class="sidebar-link waves-effect waves-dark sidebar-link" href="change_pasword.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">Change Password</span></a>');
+                            </script>
+                        </li>-->
+
+
+
+                    </ul>
+
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper" style="min-height: 250px;">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <div class="page-breadcrumb bg-white">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title text-uppercase font-medium font-14">Payment</h4>
+                    </div>
+                    <!--<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                        <div class="d-md-flex">
+                            <ol class="breadcrumb ml-auto">
+                                <li><a href="#">Admin/payment</a></li>
+                            </ol>
+
+                        </div>
+                    </div>-->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+
+                <div id="SuperAdmin" class="row" style="display:none">
+                    <div class="col-md-12">
+                        <div class="white-box">
+                            <div class="row gutters-sm">
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex flex-column align-items-center text-center">
+                                                <img id="ImgProfile" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded" width="150">
+                                                <div class="mt-3">
+                                                    <h4 id="userName"></h4>
+                                                    <p class="text-secondary mb-1" id="Email"></p>
+                                                    <p class="text-muted font-size-sm" id="mobile"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="card mb-3">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <h4><span style="color:red" id="lblErrorMsg"></span></h4>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <h6 class="mb-0">States</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary">
+                                                    <select id="StateId" class="form-control" style="margin-bottom:20px;">
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <hr>
+
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <h6 class="mb-0">Google Pay Number</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary">
+                                                    <input id="google_pay_number" type="number" minlength="10" maxlength="12" class="form-control" value="" placeholder="Google Number" name="google_pay_number" tabindex="1" required autofocus>
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <h6 class="mb-0">Phonepe Number</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary">
+                                                    <input id="phone_pe_number" type="number" minlength="10" maxlength="12" class="form-control" value="" placeholder="phonepe number" name="phone_pe_number" tabindex="1" required autofocus>
+
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <h6 class="mb-0">Upi Id</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary">
+                                                    <input id="upi_id" type="text" class="form-control" value=" " placeholder="Upi Id" name="upi_id" tabindex="1" required autofocus>
+
+                                                </div>
+                                            </div>
+
+
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <h6 class="mb-0">Amount</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary">
+                                                    <input id="Amount" type="text" class="form-control" value=" " placeholder="Amount" name="Amount" tabindex="1" required autofocus>
+
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+
+                                                <div class="col-sm-12 text-center text-secondary">
+
+                                                    <button type="submit" id="submit" class="text-center btn btn-primary" onclick="SavePaymentDetails()"> Submit</button>
+                                                </div>
+                                                <!--<div class="col-sm-3 text-secondary">
+
+                                                    <button type="reset" class="text-center btn btn-warning"> Reset</button>
+                                                </div>-->
+                                            </div>
+                                            <hr>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3">
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-9 text-secondary">
+                                            <img id="imgQRCode" src="static/assets/img/QRCode.png" id="imgQRCode" style="width:200px;height:200px" />
+                                        </div>
+
+                                        <input type="file" id="myFile" name="filename">
+                                        <div class="col-sm-12 text-center text-secondary">
+                                            <input type="submit" class="text-center btn btn-danger" onclick="UploadQRCode()">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div id="StateHead" class="row" style="display:none">
+                    <div class="col-md-12">
+                        <div class="white-box">
+                            <div class="row gutters-sm">
+                                <div class="col-md-4 mb-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="d-flex flex-column align-items-center text-center">
+                                                <img id="State_ImgProfile" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded" width="150">
+                                                <div class="mt-3">
+                                                    <h4 id="userName"></h4>
+                                                    <p class="text-secondary mb-1" id="Email"></p>
+                                                    <p class="text-muted font-size-sm" id="mobile"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="card mb-3">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <h4><span style="color:red" id="lblErrorMsg"></span></h4>
+                                                </div>
+                                            </div>
+
+
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <h6 class="mb-0">Google Pay Number</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary">
+                                                    <input id="State_google_pay_number" type="number" minlength="10" maxlength="12" class="form-control" value="" placeholder="Google Number" name="google_pay_number" tabindex="1" required autofocus readonly="readonly">
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <h6 class="mb-0">Phonepe Number</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary">
+                                                    <input id="State_phone_pe_number" type="number" minlength="10" maxlength="12" class="form-control" value="" placeholder="phonepe number" name="phone_pe_number" tabindex="1" required autofocus readonly="readonly">
+
+                                                </div>
+                                            </div>
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <h6 class="mb-0">Upi Id</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary">
+                                                    <input id="State_upi_id" type="text" class="form-control" value=" " placeholder="Upi Id" name="upi_id" tabindex="1" required autofocus readonly="readonly">
+
+                                                </div>
+                                            </div>
+
+
+                                            <hr>
+                                            <div class="row">
+                                                <div class="col-sm-3">
+                                                    <h6 class="mb-0">Amount</h6>
+                                                </div>
+                                                <div class="col-sm-9 text-secondary">
+                                                    <input id="State_Amount" type="text" class="form-control" value=" " placeholder="Amount" name="Amount" tabindex="1" required autofocus readonly="readonly">
+
+                                                </div>
+                                            </div>
+                                            <hr>
+
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-3">
+                                    <hr>
+                                    <div class="row">
+                                        <div class="col-sm-9 text-secondary">
+                                            <img id="State_imgQRCode" src="static/assets/img/QRCode.png" id="imgQRCode" style="width:200px;height:200px" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End PAge Content -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Right sidebar -->
+        <!-- ============================================================== -->
+        <!-- .right-sidebar -->
+        <!-- ============================================================== -->
+        <!-- End Right sidebar -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Container fluid  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- footer -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- End footer -->
+    <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+    <script src="static/plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="static/plugins/bower_components/popper.js/dist/umd/popper.min.js"></script>
+    <script src="static/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="static/js/app-style-switcher.js"></script>
+    <!--Wave Effects -->
+    <script src="static/js/waves.js"></script>
+    <!--Menu sidebar -->
+    <script src="static/js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="static/js/custom.js"></script>
+    <script src="static/js/jquery.cookie.min.js"></script>
+
+    <script type="text/javascript">
+        checkAuthenticated();
+        function checkAuthenticated() {
+            if ($.cookie("cookie_name") == undefined) {
+                window.location.href = "login.html";
+            } else {
+                CheckPermission();
+                GetProfiles();
+                GetAllStates();
+                RolesCheck();
+                //GetPaymentDetails();
+            }
+        }
+
+
+        $("#StateId").change(function () {
+            $("#phone_pe_number").val('');
+            $("#google_pay_number").val('');
+            $("#upi_id").val('');
+            $("#Amount").val('');
+            $("#imgQRCode").attr("src", 'static/assets/img/QRCode.png');
+            GetPaymentDetails();
+        });
+
+        function RolesCheck() {
+            if ($.cookie("RoleId") == "Super admin") {
+                $("#SuperAdmin").show();
+                $("#StateHead").hide();
+            } else {
+                $("#SuperAdmin").hide();
+                $("#StateHead").show();
+                GetStatePaymentDetails();
+            }
+        }
+
+        function GetProfiles() {
+            var myParam = $.cookie("cookie_name");
+            $.ajax({
+                url: "http://dfo.hktech.in/Admin/Profile/",
+                type: "GET",
+                headers: { Authorization: $`Bearer ${myParam}` },
+                dataType: 'json',
+                error: function (err) {
+                    switch (err.status) {
+                        case 400:
+                            // bad request
+                            break;
+                        case 401:
+                            window.location.href = "login.html";
+                            break;
+                        case 403:
+                            // forbidden
+                            break;
+                        default:
+                            //Something bad happened
+                            break;
+                    }
+                },
+                beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + myParam) },
+                success: function (response) {
+                    var email = response.data[0].email;
+                    var name = response.data[0].full_name;
+                    var mobile = response.data[0].mobile_number
+                    $("#userName").html(name);
+                    $("#Email").html(email);
+                    $("#mobile").html(mobile);
+                    if (response.data[0].profile_photo != null && $.cookie("RoleId") == "Super admin") {
+                        $("#ImgProfile").attr("src", response.data[0].profile_photo);
+                    } else if (response.data[0].profile_photo != null && $.cookie("RoleId") != "Super admin") {
+                        $("#State_ImgProfile").attr("src", response.data[0].profile_photo);
+                    }
+
+                }
+            });
+        }
+
+        function GetAllStates() {
+            var myParam = $.cookie("cookie_name");
+            $.ajax({
+                url: "http://dfo.hktech.in/Admin/Getallstates/",
+                type: "GET",
+                headers: { Authorization: $`Bearer ${myParam}` },
+                error: function (err) {
+                    $(".preloader").hide();
+                    switch (err.status) {
+                        case 400:
+                            // bad request
+                            break;
+                        case 401:
+                            window.location.href = "login.html";
+                            break;
+                        case 403:
+                            // forbidden
+                            break;
+                        default:
+                            //Something bad happened
+                            break;
+                    }
+                },
+                beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + myParam) },
+                success: function (response) {
+                    $('#StateId').find('option').remove().end();
+                    for (i = 0; i < response.data.length; i++) {
+                        $('<option>').val(response.data[i].id).text(response.data[i].state_name).appendTo('#StateId');
+                        $(".preloader").hide();
+                    }
+
+                    GetPaymentDetails();
+                }
+            });
+        }
+
+
+        function SavePaymentDetails() {
+            if ($.cookie("RoleId") == "Super admin") {
+                //var myParam = location.search.split('token=')[1];
+                var myParam = $.cookie("cookie_name");
+                var phone_pe_number = $("#phone_pe_number").val();
+                var google_pay_number = $("#google_pay_number").val();
+                var upi_id = $("#upi_id").val();
+                var Amount = $("#Amount").val();
+                var StateId = $("#StateId").val();
+                if (phone_pe_number.length < 10 || phone_pe_number.length > 12) {
+                    $("#lblErrorMsg").html('Invalid phonepe Number Number');
+                    return;
+                }
+                if (google_pay_number.length < 10 || google_pay_number.length > 12) {
+                    $("#lblErrorMsg").html('Invalid Google pay Number');
+                    return;
+                }
+                if (upi_id == "") {
+                    $("#lblErrorMsg").html('Invalid UPI ID');
+                    return;
+                }
+                if (Amount == "") {
+                    $("#lblErrorMsg").html('Invalid Amount');
+                    return;
+                }
+                //var account_number = $("#account_number").val();
+                //var name = $("#name").val();
+                //var ifsc = $("#ifsc").val();
+                //var account_type = $("#account_type").val();
+                //$("#submit").click(function () {
+                $.ajax({
+                    url: "http://dfo.hktech.in/Admin/Createpaymentdetials/",
+                    type: "POST",
+                    headers: { Authorization: $`Bearer ${myParam}` },
+                    data: '{ "phone_pe_number" : "' + phone_pe_number + '", "google_pay_number" : "' + google_pay_number + '","upi_id" : "' + upi_id + '", "amount" : "' + Amount + '","state_id" : "' + StateId + '"}',
+                    dataType: 'json',
+                    contentType: 'application/json',
+                    error: function (err) {
+                        $(".preloader").hide();
+                        switch (err.status) {
+                            case 400:
+                                $("#lblErrorMsg").html('Invalid Details provided');
+                                break;
+                            case 401:
+                                window.location.href = "login.html";
+                                break;
+                            case 403:
+                                // forbidden
+                                break;
+                            default:
+                                $("#lblErrorMsg").html('Failed to update Payment Details');
+                                break;
+                        }
+                    },
+                    beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + myParam); $(".preloader").show(); },
+                    success: function (response) {
+                        //$('input[name="status"]').val(response.detail);
+                        $("#phone_pe_number").val('');
+                        $("#google_pay_number").val('');
+                        $("#upi_id").val('');
+                        $("#Amount").val('');
+                        $("#lblErrorMsg").html('Successfully updated Payment Details');
+                        GetPaymentDetails();
+                    }
+                });
+                //});
+            }
+        }
+
+
+        function GetPaymentDetails() {
+            var myParam = $.cookie("cookie_name");
+            //var myParam = location.search.split('token=')[1];
+            $.ajax({
+                url: "http://dfo.hktech.in/Admin/Paymentdetailsallstates?state_id=" + $("#StateId").val(),
+                type: "GET",
+                headers: { Authorization: $`Bearer ${myParam}` },
+                error: function (err) {
+                    $(".preloader").hide();
+                    switch (err.status) {
+                        case 400:
+                            // bad request
+                            break;
+                        case 401:
+                            window.location.href = "login.html";
+                            break;
+                        case 403:
+                            // forbidden
+                            break;
+                        default:
+                            //Something bad happened
+                            break;
+                    }
+                },
+                beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + myParam) },
+                success: function (response) {
+                    //$('input[name="status"]').val(response.detail);
+                    if (response.data.length > 0) {
+                        $("#phone_pe_number").val(response.data[0].phone_pe_number);
+                        $("#google_pay_number").val(response.data[0].google_pay_number);
+                        $("#upi_id").val(response.data[0].upi_id);
+                        $("#Amount").val(response.data[0].amount);
+                        if (response.data[0].qr_code != "" && response.data[0].qr_code != null) {
+                            $("#imgQRCode").attr("src", response.data[0].qr_code);
+                        }
+                    } else {
+                        $("#phone_pe_number").val('');
+                        $("#google_pay_number").val('');
+                        $("#upi_id").val('');
+                        $("#Amount").val('');
+                        $("#imgQRCode").attr("src", 'static/assets/img/QRCode.png');
+                    }
+                    $(".preloader").hide();
+                }
+            });
+        }
+
+        
+        function GetStatePaymentDetails() {
+            if ($.cookie("RoleId") != " Super admin") {
+                var myParam = $.cookie("cookie_name");
+                //var myParam = location.search.split('token=')[1];
+                $.ajax({
+                    url: "http://dfo.hktech.in/Admin/Paymentdetails/",
+                    type: "GET",
+                    headers: { Authorization: $`Bearer ${myParam}` },
+                    error: function (err) {
+                        $(".preloader").hide();
+                        switch (err.status) {
+                            case 400:
+                                // bad request
+                                break;
+                            case 401:
+                                window.location.href = "login.html";
+                                break;
+                            case 403:
+                                // forbidden
+                                break;
+                            default:
+                                //Something bad happened
+                                break;
+                        }
+                    },
+                    beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + myParam) },
+                    success: function (response) {
+                        //$('input[name="status"]').val(response.detail);
+                        if (response.data.length > 0) {
+                            $("#State_phone_pe_number").val(response.data[0].phone_pe_number);
+                            $("#State_google_pay_number").val(response.data[0].google_pay_number);
+                            $("#State_upi_id").val(response.data[0].upi_id);
+                            $("#State_Amount").val(response.data[0].amount);
+                            if (response.data[0].qr_code != "" && response.data[0].qr_code != null) {
+                                $("#State_imgQRCode").attr("src", response.data[0].qr_code);
+                            }
+                        } else {
+                            $("#State_phone_pe_number").val('');
+                            $("#State_google_pay_number").val('');
+                            $("#State_upi_id").val('');
+                            $("#State_Amount").val('');
+                            $("#State_imgQRCode").attr("src", 'static/assets/img/QRCode.png');
+                        }
+                        $(".preloader").hide();
+                    }
+                });
+            }
+        }
+
+
+
+
+        function Logout() {
+            $.removeCookie('cookie_name', { path: '/' });
+            window.location.href = "login.html";
+        }
+
+        function UploadQRCode() {
+            var fd = new FormData();
+            var files = $('#myFile')[0].files;
+            var StateId = $("#StateId").val();
+            // Check file selected or not
+            if (files.length > 0) {
+                fd.append('qr_code', files[0]);
+            }
+            fd.append('state_id', StateId);
+
+            var myParam = $.cookie("cookie_name");
+            $.ajax({
+                url: "http://dfo.hktech.in/Admin/UploadQrphoto/",
+                type: "POST",
+                headers: { Authorization: $`Bearer ${myParam}` },
+                data: fd,
+                //dataType: 'json',
+                //contentType: 'application/json',
+                contentType: false,
+                processData: false,
+                error: function (err) {
+                    $('#ModalRole').modal('hide');
+                    $("#lblRoleErrorMsg").html('');
+                    $(".preloader").hide();
+                    switch (err.status) {
+                        case 400:
+                            $("#lblErrorMsg").html('Failed To Create Role');
+                            break;
+                        case 401:
+                            window.location.href = "login.html";
+                            break;
+                        case 403:
+                            // forbidden
+                            break;
+                        default:
+                            $("#lblErrorMsg").html('Failed To Create Role');
+                            break;
+                    }
+                },
+                beforeSend: function (xhr) { xhr.setRequestHeader('Authorization', 'Bearer ' + myParam); $(".preloader").show(); },
+                success: function (response) {
+                    $("#lblErrorMsg").html('Successfully Updated profile Photo');
+                    GetPaymentDetails();
+                }
+            });
+        }
+
+        function CheckPermission() {
+            if ($.cookie("RoleId") == "Super admin") {
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="all_user.html"><i class="fa fa-user" aria - hidden="true"></i> <span class="hide-menu">All User</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="Roles.html"><i class="fa fa-table" aria - hidden="true" ></i > <span class="hide-menu">Roles</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="states.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">States</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="Districts.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">Districts</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="SubDistricts.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">SubDistricts</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="UserForms.html"><i class="fa fa-table" aria - hidden="true" ></i > <span class="hide-menu">Form</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="payment.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Payment</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="StateHead.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">StateHeads</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="DistrictHead.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">DistrictHeads</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="SubDistrictHead.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">SubDistrictHeads</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="Attendance.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">Attendance</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Profile</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="change_pasword.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">Change Password</span></a></li>');
+            }
+            else if ($.cookie("RoleId") == "District head") {
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="all_user.html"><i class="fa fa-user" aria - hidden="true"></i> <span class="hide-menu">All User</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="UserForms.html"><i class="fa fa-table" aria - hidden="true" ></i > <span class="hide-menu">Form</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="payment.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Payment</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Profile</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="change_pasword.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">Change Password</span></a></li>');
+            }
+            else if ($.cookie("RoleId") == "State head") {
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="all_user.html"><i class="fa fa-user" aria - hidden="true"></i> <span class="hide-menu">All User</span></a></li>');             
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="UserForms.html"><i class="fa fa-table" aria - hidden="true" ></i > <span class="hide-menu">Form</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="payment.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Payment</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Profile</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="change_pasword.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">Change Password</span></a></li>');
+            } else if ($.cookie("RoleId") == "Taluk head") {
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="all_user.html"><i class="fa fa-user" aria - hidden="true"></i> <span class="hide-menu">All User</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="UserForms.html"><i class="fa fa-table" aria - hidden="true" ></i > <span class="hide-menu">Form</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="payment.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Payment</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Profile</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="change_pasword.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">Change Password</span></a></li>');
+            } else {
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="payment.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Payment</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="profile.html"><i class="fa fa-font" aria - hidden="true" ></i > <span class="hide-menu">Profile</span></a></li>');
+                $("#sidebarnav").append('<li class="sidebar-item"><a class="sidebar-link waves-effect waves-dark sidebar-link" href="change_pasword.html"><i class="fa fa-globe" aria - hidden="true" ></i > <span class="hide-menu">Change Password</span></a></li>');
+            }
+        }
+    </script>
+</body>
+
+</html>
