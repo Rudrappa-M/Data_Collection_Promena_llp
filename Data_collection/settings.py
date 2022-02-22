@@ -25,7 +25,7 @@ SECRET_KEY = '6axkwb8d8#%tn1zr&7ajzq5p1n0vzsk((=sz2=-uhb4cbz4&jc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*','djangodatacollection.herokuapp.com']
 
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -235,8 +235,8 @@ EMAIL_HOST = 'smtp.gmail.com'
 #EMAIL_HOST = 'mail.yoneak.com'
 EMAIL_PORT = 587
 EMAIL_USE_SSL = False
-EMAIL_HOST_USER = 'pradeepbj95@gmail.com'
-EMAIL_HOST_PASSWORD = 'vnznezlssuovuasf'
+EMAIL_HOST_USER = 'rudrappa94922@gmail.com'
+EMAIL_HOST_PASSWORD = 'Ammananna@1'
 # EMAIL_HOST_USER = 'info@yoneak.com'
 # EMAIL_HOST_PASSWORD = 'jZMv4@vH3zg'
 EMAIL_USE_TLS =  True
