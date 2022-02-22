@@ -25,7 +25,7 @@ SECRET_KEY = '6axkwb8d8#%tn1zr&7ajzq5p1n0vzsk((=sz2=-uhb4cbz4&jc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*','ITBIZCON.IN']
+ALLOWED_HOSTS = ['*']
 
 
 CORS_ORIGIN_ALLOW_ALL = True
@@ -58,6 +58,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
