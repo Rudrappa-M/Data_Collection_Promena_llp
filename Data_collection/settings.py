@@ -278,3 +278,10 @@ import django_heroku
 django_heroku.settings(locals())
 import django_heroku
 TEST_RUNNER = 'django_heroku.HerokuDiscoverRunner'
+
+import os
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'
