@@ -273,3 +273,8 @@ DEFAULT_FILE_STORAGE = 'Data_collection.storage_backends.MediaStorage'
 AUTHENTICATION_BACKENDS = (
     ('django.contrib.auth.backends.ModelBackend'),
 )
+
+import django_heroku
+django_heroku.settings(locals())
+import django_heroku
+TEST_RUNNER = 'django_heroku.HerokuDiscoverRunner'
